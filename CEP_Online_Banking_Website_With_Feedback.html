@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Secure Online Banking Awareness Programme - Community Engagement Project by Jason Joseph Munis, Abhinav College.">
+<title>Secure Online Banking Awareness | CEP Project</title>
+<style>
+:root{--navy:#071a35;--navy2:#0c2850;--blue:#1769e0;--cyan:#45d5d0;--ink:#17243a;--muted:#64748b;--bg:#f4f7fb;--white:#fff;--line:#e3eaf3;--green:#12a879;--orange:#f3a536}
+*{box-sizing:border-box;scroll-behavior:smooth}
+body{margin:0;font-family:Inter,Segoe UI,Arial,sans-serif;background:var(--bg);color:var(--ink);line-height:1.65}
+a{color:inherit;text-decoration:none}
+header{position:sticky;top:0;z-index:20;background:rgba(7,26,53,.96);backdrop-filter:blur(12px);color:white;border-bottom:1px solid #ffffff20}
+.nav{max-width:1160px;margin:auto;padding:13px 22px;display:flex;align-items:center;justify-content:space-between;gap:20px}
+.brand{font-weight:800;letter-spacing:.2px;display:flex;align-items:center;gap:10px}
+.brand-mark{width:35px;height:35px;border-radius:11px;background:linear-gradient(135deg,var(--cyan),var(--blue));display:grid;place-items:center;font-size:19px}
+nav{display:flex;gap:19px;align-items:center;font-size:13px;color:#d9e6f8}
+nav a:hover{color:var(--cyan)}
+.menu{display:none;background:none;border:1px solid #ffffff55;color:white;padding:7px 11px;border-radius:8px;font-size:19px}
+.hero{background:radial-gradient(circle at 80% 20%,#1769e055,transparent 28%),linear-gradient(120deg,#06162e,#0b2d59 65%,#07516b);color:white;overflow:hidden}
+.hero-inner{max-width:1160px;margin:auto;padding:88px 22px 82px;display:grid;grid-template-columns:1.2fr .8fr;gap:45px;align-items:center}
+.eyebrow{display:inline-flex;align-items:center;gap:8px;border:1px solid #ffffff40;border-radius:99px;padding:7px 13px;color:#a8f4ed;font-size:12px;font-weight:700;letter-spacing:1px;text-transform:uppercase}
+h1{font-size:clamp(38px,5.5vw,65px);line-height:1.08;letter-spacing:-1.8px;margin:22px 0}
+.hero p{font-size:17px;color:#d4e2f5;max-width:650px}
+.hero-actions{display:flex;gap:12px;flex-wrap:wrap;margin-top:28px}
+.btn{display:inline-block;padding:12px 19px;border-radius:10px;font-weight:700;font-size:14px;background:var(--cyan);color:#06203c}
+.btn.secondary{background:transparent;color:white;border:1px solid #ffffff70}
+.hero-card{background:#ffffff12;border:1px solid #ffffff30;border-radius:22px;padding:26px;box-shadow:0 25px 70px #0003}
+.shield{width:72px;height:72px;border-radius:22px;background:linear-gradient(135deg,#49ded2,#1769e0);display:grid;place-items:center;font-size:37px;margin-bottom:20px}
+.hero-card h3{margin:0 0 8px;font-size:22px}.hero-card p{font-size:14px;margin:0;color:#d7e5f7}
+.mini-stats{display:grid;grid-template-columns:repeat(2,1fr);gap:12px;margin-top:22px}
+.mini-stat{background:#071a356b;padding:14px;border-radius:12px}.mini-stat strong{display:block;font-size:24px;color:#64e5dc}.mini-stat span{font-size:12px;color:#d2e2f5}
+section{scroll-margin-top:75px}
+.container{max-width:1160px;margin:auto;padding:76px 22px}
+.section-head{max-width:720px;margin-bottom:34px}
+.kicker{color:var(--blue);font-size:12px;font-weight:800;letter-spacing:1.4px;text-transform:uppercase}
+h2{font-size:clamp(28px,3.5vw,40px);line-height:1.2;margin:9px 0 13px;color:var(--navy)}
+.section-head p,.muted{color:var(--muted)}
+.grid{display:grid;gap:18px}
+.grid.three{grid-template-columns:repeat(3,1fr)}
+.grid.two{grid-template-columns:repeat(2,1fr)}
+.card{background:white;border:1px solid var(--line);border-radius:17px;padding:23px;box-shadow:0 7px 24px #0d2b5010}
+.card .icon{width:44px;height:44px;border-radius:13px;background:#eaf3ff;display:grid;place-items:center;font-size:22px;margin-bottom:13px}
+.card h3{margin:0 0 7px;color:var(--navy);font-size:18px}.card p{margin:0;color:var(--muted);font-size:14px}
+.soft{background:#eaf1fa}
+.stats{display:grid;grid-template-columns:repeat(4,1fr);gap:14px}
+.stat{background:white;border:1px solid var(--line);border-radius:15px;padding:20px}
+.stat strong{font-size:34px;color:var(--blue);display:block;line-height:1.2}.stat span{font-size:13px;color:var(--muted)}
+.chart-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:18px}
+.chart-card{background:white;border:1px solid var(--line);border-radius:17px;padding:22px}
+.chart-card h3{margin:0 0 5px;font-size:17px;color:var(--navy)}
+.chart-card small{color:var(--muted)}
+.bar-row{display:grid;grid-template-columns:125px 1fr 44px;align-items:center;gap:10px;margin:14px 0;font-size:13px}
+.track{height:11px;background:#edf2f8;border-radius:20px;overflow:hidden}
+.fill{height:100%;border-radius:20px;background:linear-gradient(90deg,var(--blue),var(--cyan))}
+.pct{text-align:right;font-weight:700;color:var(--navy);font-variant-numeric:tabular-nums}
+.note{font-size:12px;color:var(--muted);margin-top:12px}
+.alert{border-left:4px solid var(--cyan);background:#eafaf8;padding:17px 19px;border-radius:0 12px 12px 0;color:#174b55}
+.scam{border-top:3px solid var(--blue)}
+.scam .icon{background:#edf5ff}
+.checklist{display:grid;grid-template-columns:repeat(2,1fr);gap:12px}
+.check{display:flex;gap:12px;background:white;border:1px solid var(--line);border-radius:12px;padding:14px;align-items:flex-start;font-size:14px}
+.check b{color:var(--green);font-size:18px}
+.steps{display:grid;grid-template-columns:repeat(4,1fr);gap:14px}
+.step{padding:19px;background:var(--navy);color:white;border-radius:15px}
+.step span{font-size:12px;color:#69e3db;font-weight:800;letter-spacing:1px}
+.step h3{font-size:17px;margin:8px 0}.step p{font-size:13px;color:#d1deef;margin:0}
+footer{background:#06162e;color:#d4e1f1}
+.footer-inner{max-width:1160px;margin:auto;padding:44px 22px;display:flex;justify-content:space-between;gap:30px;flex-wrap:wrap}
+footer h3{color:white;margin-top:0}footer p,footer a{font-size:13px;color:#b7c8dc}
+.footer-bottom{border-top:1px solid #ffffff20;text-align:center;padding:15px;font-size:12px;color:#91a7c2}
+.toplink{position:fixed;bottom:20px;right:20px;background:var(--blue);color:white;border:0;border-radius:50%;width:45px;height:45px;font-size:20px;cursor:pointer;box-shadow:0 8px 25px #1769e055}
+@media(max-width:850px){nav{display:none;position:absolute;top:61px;left:0;right:0;background:var(--navy);padding:18px 22px;flex-direction:column;align-items:flex-start}nav.open{display:flex}.menu{display:block}.hero-inner{grid-template-columns:1fr;padding-top:65px}.hero-card{max-width:520px}.grid.three{grid-template-columns:repeat(2,1fr)}.stats{grid-template-columns:repeat(2,1fr)}.steps{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:580px){.container{padding:57px 17px}.nav{padding:12px 17px}.grid.three,.grid.two,.chart-grid,.checklist{grid-template-columns:1fr}.stats{gap:9px}.stat{padding:15px}.stat strong{font-size:28px}.bar-row{grid-template-columns:105px 1fr 39px;gap:7px}.steps{grid-template-columns:1fr 1fr}.hero-inner{padding:60px 18px}.hero-card{padding:21px}h1{letter-spacing:-1px}}
+</style>
+</head>
+<body>
+<header>
+  <div class="nav">
+    <a class="brand" href="#home"><span class="brand-mark">🛡️</span><span>SAFE BANKING <small style="display:block;font-size:9px;color:#9fb5d2;letter-spacing:1.5px">AWARENESS PROJECT</small></span></a>
+    <button class="menu" aria-label="Toggle navigation" onclick="document.querySelector('nav').classList.toggle('open')">☰</button>
+    <nav>
+      <a href="#about">About</a><a href="#survey">Survey</a><a href="#findings">Findings</a><a href="#scams">Scams</a><a href="#safety">Safety Tips</a><a href="#conclusion">Conclusion</a><a href="#feedback">Feedback</a>
+    </nav>
+  </div>
+</header>
+<main>
+<section class="hero" id="home">
+ <div class="hero-inner">
+  <div>
+   <span class="eyebrow">Community Engagement Project · TY B.Sc. IT</span>
+   <h1>Secure Online<br><span style="color:#57e0d6">Banking</span> Awareness</h1>
+   <p>Building safer digital payment habits through awareness, practical guidance and community participation.</p>
+   <div class="hero-actions"><a class="btn" href="#about">Explore the project →</a><a class="btn secondary" href="#safety">View safety checklist</a></div>
+   <p style="font-size:13px;margin-top:25px;color:#a9bfd9">Presented by <strong style="color:white">Jason Joseph Munis</strong><br>Abhinav College of Arts, Commerce and Science · Mumbai University</p>
+  </div>
+  <div class="hero-card">
+   <div class="shield">🛡️</div><h3>Think before you tap.</h3>
+   <p>Protect your banking details. Verify every request. Use official channels to stay safe online.</p>
+   <div class="mini-stats"><div class="mini-stat"><strong>30</strong><span>Survey respondents</span></div><div class="mini-stat"><strong>90%</strong><span>Use UPI</span></div><div class="mini-stat"><strong>80%</strong><span>Heard of phishing</span></div><div class="mini-stat"><strong>76.7%</strong><span>Want to learn more</span></div></div>
+  </div>
+ </div>
+</section>
+
+<section id="about"><div class="container">
+ <div class="section-head"><span class="kicker">01 · About the project</span><h2>Making digital banking safer for everyone</h2><p>Digital banking makes payments quick and convenient. At the same time, users need to recognise suspicious messages, calls and payment requests before acting on them.</p></div>
+ <div class="grid three">
+  <article class="card"><div class="icon">🎯</div><h3>Aim</h3><p>To understand online banking awareness and encourage safer digital payment practices in the community.</p></article>
+  <article class="card"><div class="icon">🔍</div><h3>Objectives</h3><p>Assess service usage, OTP/PIN/CVV knowledge, phishing awareness, scam recognition and everyday security habits.</p></article>
+  <article class="card"><div class="icon">🌐</div><h3>Scope</h3><p>The project studies general awareness and self-reported practices. It does not technically test banking systems.</p></article>
+ </div>
+ <div class="grid two" style="margin-top:18px">
+  <article class="card"><h3>Why this project matters</h3><p>Fraudsters may use SMS, messaging apps, phone calls, social media, fake websites and QR-code prompts. Simple safety habits can reduce avoidable risks.</p></article>
+  <article class="card"><h3>How the study was conducted</h3><p>A descriptive survey was conducted using a Google Forms questionnaire. The report analyses the response summary of 30 participants through counts, percentages and descriptive observations.</p></article>
+ </div>
+</div></section>
+
+<section class="soft" id="survey"><div class="container">
+ <div class="section-head"><span class="kicker">02 · Survey snapshot</span><h2>What the 30 respondents told us</h2><p>The survey explored digital banking use, awareness of common threats and personal safety habits.</p></div>
+ <div class="stats">
+  <div class="stat"><strong>30</strong><span>Total participants</span></div><div class="stat"><strong>50%</strong><span>Use digital banking daily</span></div><div class="stat"><strong>90%</strong><span>Use UPI</span></div><div class="stat"><strong>76.7%</strong><span>Interested in more learning</span></div>
+ </div>
+ <div class="alert" style="margin-top:20px"><strong>How to read these results:</strong> This is a small descriptive sample, not a representative survey of the wider population. Some questions allowed multiple selections, so their percentages may add up to more than 100%.</div>
+</div></section>
+
+<section id="findings"><div class="container">
+ <div class="section-head"><span class="kicker">03 · Key findings</span><h2>Awareness is growing. Confidence needs practice.</h2><p>Selected results transcribed from the survey analysis in the project report.</p></div>
+ <div class="chart-grid">
+  <div class="chart-card"><h3>Digital banking frequency</h3><small>How often respondents use digital banking</small>
+   <div class="bar-row"><span>Daily</span><div class="track"><div class="fill" style="width:50%"></div></div><b class="pct">50%</b></div>
+   <div class="bar-row"><span>Several times/week</span><div class="track"><div class="fill" style="width:26.7%"></div></div><b class="pct">26.7%</b></div>
+   <div class="bar-row"><span>Occasionally</span><div class="track"><div class="fill" style="width:10%"></div></div><b class="pct">10%</b></div>
+   <div class="bar-row"><span>Rarely</span><div class="track"><div class="fill" style="width:13.3%"></div></div><b class="pct">13.3%</b></div>
+  </div>
+  <div class="chart-card"><h3>Services used</h3><small>Multiple responses were allowed</small>
+   <div class="bar-row"><span>UPI</span><div class="track"><div class="fill" style="width:90%"></div></div><b class="pct">90%</b></div>
+   <div class="bar-row"><span>Mobile banking</span><div class="track"><div class="fill" style="width:46.7%"></div></div><b class="pct">46.7%</b></div>
+   <div class="bar-row"><span>Internet banking</span><div class="track"><div class="fill" style="width:30%"></div></div><b class="pct">30%</b></div>
+   <div class="bar-row"><span>ATM/debit card</span><div class="track"><div class="fill" style="width:30%"></div></div><b class="pct">30%</b></div>
+   <div class="bar-row"><span>Credit card</span><div class="track"><div class="fill" style="width:10%"></div></div><b class="pct">10%</b></div>
+   <div class="bar-row"><span>Mobile wallet</span><div class="track"><div class="fill" style="width:10%"></div></div><b class="pct">10%</b></div>
+  </div>
+  <div class="chart-card"><h3>Confidential information awareness</h3><small>Do banks ask for OTP, PIN, CVV or password?</small>
+   <div class="bar-row"><span>Yes (correct)</span><div class="track"><div class="fill" style="width:60%"></div></div><b class="pct">60%</b></div>
+   <div class="bar-row"><span>No</span><div class="track"><div class="fill" style="width:16.7%"></div></div><b class="pct">16.7%</b></div>
+   <div class="bar-row"><span>Not sure</span><div class="track"><div class="fill" style="width:23.3%"></div></div><b class="pct">23.3%</b></div>
+  </div>
+  <div class="chart-card"><h3>Phishing familiarity</h3><small>Have respondents heard about phishing/fake links?</small>
+   <div class="bar-row"><span>Yes</span><div class="track"><div class="fill" style="width:80%"></div></div><b class="pct">80%</b></div>
+   <div class="bar-row"><span>No</span><div class="track"><div class="fill" style="width:20%"></div></div><b class="pct">20%</b></div>
+   <p class="note">Knowing the term does not always mean someone can safely recognise a realistic scam.</p>
+  </div>
+  <div class="chart-card"><h3>Response to an OTP request</h3><small>Caller claims to be a bank employee</small>
+   <div class="bar-row"><span>Refuse/end call</span><div class="track"><div class="fill" style="width:60%"></div></div><b class="pct">60%</b></div>
+   <div class="bar-row"><span>Ask why</span><div class="track"><div class="fill" style="width:30%"></div></div><b class="pct">30%</b></div>
+   <div class="bar-row"><span>Share OTP</span><div class="track"><div class="fill" style="width:6.7%"></div></div><b class="pct">6.7%</b></div>
+   <div class="bar-row"><span>Unsure</span><div class="track"><div class="fill" style="width:3.3%"></div></div><b class="pct">3.3%</b></div>
+  </div>
+  <div class="chart-card"><h3>Everyday security habits</h3><small>Respondents reporting “always”</small>
+   <div class="bar-row"><span>Use app lock</span><div class="track"><div class="fill" style="width:70%"></div></div><b class="pct">70%</b></div>
+   <div class="bar-row"><span>Check transactions</span><div class="track"><div class="fill" style="width:56.7%"></div></div><b class="pct">56.7%</b></div>
+   <div class="bar-row"><span>Avoid public Wi-Fi</span><div class="track"><div class="fill" style="width:36.7%"></div></div><b class="pct">36.7%</b></div>
+  </div>
+ </div>
+ <p class="note">Source: Secure Online Banking Awareness Programme report, survey analysis (30 responses). Values are presented as reported in the project.</p>
+</div></section>
+
+<section class="soft" id="scams"><div class="container">
+ <div class="section-head"><span class="kicker">04 · Know the threats</span><h2>Common online banking scams</h2><p>Scammers may pretend to be trusted people or organisations to pressure users into sharing information or approving payments.</p></div>
+ <div class="grid three">
+  <article class="card scam"><div class="icon">✉️</div><h3>Phishing messages</h3><p>Fake SMS, emails or messages that lead to fraudulent websites or ask for confidential details.</p></article>
+  <article class="card scam"><div class="icon">📞</div><h3>Vishing / fake calls</h3><p>A caller impersonates bank staff or customer care and pressures someone to reveal an OTP or other details.</p></article>
+  <article class="card scam"><div class="icon">🔗</div><h3>Fake banking links</h3><p>Unexpected links may imitate a bank website. Check the address and use the bank's official app or website instead.</p></article>
+  <article class="card scam"><div class="icon">💸</div><h3>Fake UPI requests</h3><p>A payment or collect request may be presented as a way to receive money. Read the request carefully before approving.</p></article>
+  <article class="card scam"><div class="icon">▦</div><h3>QR-code tricks</h3><p>Scanning a QR code or approving a request can initiate a payment. A QR code is not automatically a way to receive money.</p></article>
+  <article class="card scam"><div class="icon">🎧</div><h3>Fake customer care</h3><p>Fraudulent support listings may connect users to scammers. Find contact details through official bank channels.</p></article>
+ </div>
+</div></section>
+
+<section id="safety"><div class="container">
+ <div class="section-head"><span class="kicker">05 · Protect yourself</span><h2>Your secure banking checklist</h2><p>Simple habits can help protect your account and personal information.</p></div>
+ <div class="checklist">
+  <div class="check"><b>✓</b><span>Never share your OTP, PIN, CVV or password with anyone.</span></div>
+  <div class="check"><b>✓</b><span>Do not click unexpected banking links or test unknown links.</span></div>
+  <div class="check"><b>✓</b><span>Do not install remote-access apps at a caller’s request.</span></div>
+  <div class="check"><b>✓</b><span>Check the recipient name and amount before approving a payment.</span></div>
+  <div class="check"><b>✓</b><span>Verify callers through the bank’s official app, website or phone number.</span></div>
+  <div class="check"><b>✓</b><span>Avoid banking over public or untrusted Wi-Fi.</span></div>
+  <div class="check"><b>✓</b><span>Keep your phone and banking apps updated; use a screen lock.</span></div>
+  <div class="check"><b>✓</b><span>Check transaction alerts and account statements regularly.</span></div>
+  <div class="check"><b>✓</b><span>Report suspected fraud quickly to your bank and appropriate official channels.</span></div>
+ </div>
+ <div class="alert" style="margin-top:22px"><strong>Remember:</strong> If a caller asks for your OTP, refuse, end the interaction and independently contact your bank using an official channel.</div>
+</div></section>
+
+<section class="soft"><div class="container">
+ <div class="section-head"><span class="kicker">06 · Proposed community activity</span><h2>Turn awareness into action</h2><p>The report proposes a short awareness session built around practical examples and safe decision-making.</p></div>
+ <div class="steps">
+  <div class="step"><span>STEP 01</span><h3>Introduce scam types</h3><p>Explain phishing, impersonation calls and payment-request risks.</p></div>
+  <div class="step"><span>STEP 02</span><h3>Inspect suspicious messages</h3><p>Demonstrate warning signs without opening unknown links.</p></div>
+  <div class="step"><span>STEP 03</span><h3>Practise safe responses</h3><p>Use role-play for handling a caller asking for an OTP.</p></div>
+  <div class="step"><span>STEP 04</span><h3>Share a checklist</h3><p>End with simple habits and clear reporting guidance.</p></div>
+ </div>
+ <p class="note">The activity should not ask participants to share personal banking information or display real account details.</p>
+</div></section>
+
+<section id="conclusion"><div class="container">
+ <div class="section-head"><span class="kicker">07 · Conclusion & recommendations</span><h2>Safer banking starts with informed decisions</h2><p>The survey suggests that respondents regularly use digital banking, particularly UPI, and many have heard about phishing. However, gaps remain in credential awareness, scam-identification confidence, transaction monitoring and safe use of public Wi-Fi.</p></div>
+ <div class="grid two">
+  <article class="card"><h3>Key recommendations</h3><p>Conduct short awareness sessions with fictional examples; repeat the rule never to disclose confidential credentials; teach users to end suspicious calls and verify independently; explain UPI collect requests and QR-code risks; encourage regular transaction checks, app locks, software updates and trusted network use; and provide clear reporting information.</p></article>
+  <article class="card"><h3>Limitations & future scope</h3><p>The study is based on 30 responses and is not demonstrated to be a representative sample. Future work could include a wider community, a pre- and post-awareness quiz, multilingual material and feedback from banking or cyber-safety educators.</p></article>
+ </div>
+ <div class="alert" style="margin-top:20px">Secure online banking requires both responsible technology use and informed decisions. Pause before acting on urgent messages, protect confidential credentials and verify requests through official channels.</div>
+</div></section>
+
+<section class="soft" id="references"><div class="container">
+ <div class="section-head"><span class="kicker">08 · References</span><h2>Sources used in the project</h2><p>Public awareness and educational resources listed in the uploaded CEP report.</p></div>
+ <div class="grid three">
+  <article class="card"><h3>Reserve Bank of India</h3><p>Public awareness information and customer protection resources.</p><p style="margin-top:10px"><a href="https://www.rbi.org.in/" target="_blank" rel="noopener" style="color:var(--blue);font-weight:700">Visit RBI ↗</a></p></article>
+  <article class="card"><h3>National Cyber Crime Reporting Portal</h3><p>Government of India cybercrime reporting and awareness resources.</p><p style="margin-top:10px"><a href="https://cybercrime.gov.in/" target="_blank" rel="noopener" style="color:var(--blue);font-weight:700">Visit portal ↗</a></p></article>
+  <article class="card"><h3>Indian Cyber Crime Coordination Centre</h3><p>Cyber safety awareness resources, Ministry of Home Affairs.</p><p style="margin-top:10px"><a href="https://i4c.mha.gov.in/" target="_blank" rel="noopener" style="color:var(--blue);font-weight:700">Visit I4C ↗</a></p></article>
+  <article class="card"><h3>National Payments Corporation of India</h3><p>UPI product information and safety-related guidance.</p><p style="margin-top:10px"><a href="https://www.npci.org.in/" target="_blank" rel="noopener" style="color:var(--blue);font-weight:700">Visit NPCI ↗</a></p></article>
+  <article class="card"><h3>Cyber Swachhta Kendra</h3><p>Government of India cyber security awareness and safety resources.</p><p style="margin-top:10px"><a href="https://www.csk.gov.in/" target="_blank" rel="noopener" style="color:var(--blue);font-weight:700">Visit website ↗</a></p></article>
+  <article class="card"><h3>Project survey</h3><p>Google Forms survey response summary supplied for this project: 30 responses, along with the report’s chart summaries.</p></article>
+ </div>
+</div></section>
+
+<section class="soft" id="feedback"><div class="container">
+ <div class="section-head"><span class="kicker">09 · Your feedback</span><h2>Share your feedback</h2><p>Thank you for visiting our Secure Online Banking Awareness website. Your feedback helps us understand what you learned and how this project can be improved.</p></div>
+ <article class="card" style="text-align:center;padding:30px"><div class="icon">📝</div><h3>Tell us what you think</h3><p>Click the button below to open the feedback form. Your answers will be saved in the project's linked Google Sheet.</p><p style="margin-top:22px"><a class="btn" href="https://docs.google.com/forms/d/e/1FAIpQLSd-RUP0Gd929eowjWC8VnuB2KNGtpiCamR6I-xJkFudk1QnFw/viewform" target="_blank" rel="noopener">Open Feedback Form ↗</a></p></article>
+</div></section>
+
+</main>
+<footer>
+ <div class="footer-inner">
+  <div><h3>Secure Online Banking Awareness Programme</h3><p>Community Engagement Project · TY B.Sc. IT</p><p>Prepared by Jason Joseph Munis</p></div>
+  <div><h3>Academic details</h3><p>Abhinav College of Arts, Commerce and Science</p><p>Mumbai University</p></div>
+  <div><h3>Project message</h3><p>Stay alert. Protect your details.<br>Verify before you trust.</p></div>
+ </div>
+ <div class="footer-bottom">© 2026 · CEP Project Website · Educational awareness purpose</div>
+</footer>
+<button class="toplink" aria-label="Back to top" onclick="window.scrollTo({top:0,behavior:'smooth'})">↑</button>
+<script>
+document.querySelectorAll('nav a').forEach(a=>a.addEventListener('click',()=>document.querySelector('nav').classList.remove('open')));
+</script>
+</body>
+</html>
